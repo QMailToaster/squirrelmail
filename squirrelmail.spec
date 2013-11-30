@@ -120,22 +120,22 @@ for DIR in class functions help images include locale plugins src themes; do
     %{__cp} -rp $DIR %{buildroot}%{sdir}/
 done
 
-mv -f %{buildroot}%{lcdir}/config_local.php \
-      %{buildroot}%{lcdir}/config_local.php.dist
-%{__install} config_local.php %{buildroot}%{lcdir}/config_local.php
+%{__mv} -f %{buildroot}%{lcdir}/config_local.php \
+           %{buildroot}%{lcdir}/config_local.php.dist
+%{__install} %{_sourcedir}/config_local.php  %{buildroot}%{lcdir}/.
 
 # install the cron script
 %{__mkdir_p} -m 755 %{buildroot}%{_sysconfdir}/cron.daily
 %{__install} -m 755 contrib/RPM/squirrelmail.cron \
     %{buildroot}/%{_sysconfdir}/cron.daily/
 
-%{__install} -Dp squirrelmail.conf %{buildroot}%{apachedir}/squirrelmail.conf
+%{__install} -Dp %{_sourcedir}/squirrelmail.conf %{buildroot}%{apachedir}/.
 
 #-------------------------------------------------------------------------------
 %clean
 #-------------------------------------------------------------------------------
-rm -rf %{buildroot}
 [ -d $RPM_BUILD_DIR/%{name}-%{version} ] && rm -rf $RPM_BUILD_DIR/%{name}-%{version}
+rm -rf %{buildroot}
 
 #------------------------------------------------------------------------------
 %files
