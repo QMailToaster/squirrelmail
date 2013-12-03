@@ -129,7 +129,7 @@ done
 %{__install} -m 755 contrib/RPM/squirrelmail.cron \
     %{buildroot}/%{_sysconfdir}/cron.daily/
 
-%{__install} -Dp %{_sourcedir}/squirrelmail.conf %{buildroot}%{apachedir}
+%{__install} -Dp %{_sourcedir}/squirrelmail.conf %{buildroot}%{apachedir}/
 
 #-------------------------------------------------------------------------------
 %clean
