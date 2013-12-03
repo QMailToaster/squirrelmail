@@ -125,11 +125,11 @@ done
 %{__install} %{_sourcedir}/config_local.php  %{buildroot}%{lcdir}
 
 # install the cron script
-%{__mkdir_p} -m 755 %{buildroot}%{_sysconfdir}/cron.daily
-%{__install} -m 755 contrib/RPM/squirrelmail.cron \
-    %{buildroot}/%{_sysconfdir}/cron.daily/
+%{__install} -Dp contrib/RPM/squirrelmail.cron \
+      %{buildroot}/%{_sysconfdir}/cron.daily/squirrelmail.cron
 
-%{__install} -Dp %{_sourcedir}/squirrelmail.conf %{buildroot}%{apachedir}/
+%{__install} -Dp %{_sourcedir}/squirrelmail.conf \
+      %{buildroot}%{apachedir}squirrelmail.conf
 
 #-------------------------------------------------------------------------------
 %clean
