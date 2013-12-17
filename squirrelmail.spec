@@ -122,19 +122,18 @@ done
 
 %{__mv} -f %{buildroot}%{lcdir}/config_local.php \
            %{buildroot}%{lcdir}/config_local.php.dist
-%{__install} %{_sourcedir}/config_local.php  %{buildroot}%{lcdir}
+%{__install} %{SOURCE5}/config_local.php  %{buildroot}%{lcdir}
 
 # install the cron script
 %{__install} -Dp contrib/RPM/squirrelmail.cron \
       %{buildroot}/%{_sysconfdir}/cron.daily/squirrelmail.cron
 
-%{__install} -Dp %{_sourcedir}/squirrelmail.conf \
-      %{buildroot}%{apachedir}squirrelmail.conf
+%{__install} -Dp %{SOURCE6} %{buildroot}%{apachedir}squirrelmail.conf
 
 #-------------------------------------------------------------------------------
 %clean
 #-------------------------------------------------------------------------------
-[ -d $RPM_BUILD_DIR/%{name}-%{version} ] && rm -rf $RPM_BUILD_DIR/%{name}-%{version}
+rm -rf %{_builddir}/%{name}-%{version}
 rm -rf %{buildroot}
 
 #------------------------------------------------------------------------------
