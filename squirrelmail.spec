@@ -121,8 +121,8 @@ for DIR in class functions help images include locale plugins src themes; do
 done
 
 %{__mv} -f %{buildroot}%{lcdir}/config_local.php \
-           %{buildroot}%{lcdir}/config_local.php.dist
-%{__install} %{SOURCE5}/config_local.php  %{buildroot}%{lcdir}
+                         %{buildroot}%{lcdir}/config_local.php.dist
+%{__install} %{SOURCE5}  %{buildroot}%{lcdir}/.
 
 # install the cron script
 %{__install} -Dp contrib/RPM/squirrelmail.cron \
