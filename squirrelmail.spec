@@ -1,24 +1,26 @@
-Name:           squirrelmail
-Summary:        SquirrelMail webmail client
-Version:        1.4.22
-Release:        0%{?dist}
-License:        GPL
-URL:            http://www.squirrelmail.org/
-Group:          Applications/Internet
-Source0:        http://downloads.sourceforge.net/project/squirrelmail/stable/1.4.22/%{name}-webmail-%{version}.tar.gz
-Source1:	http://www.squirrelmail.org/plugins/quota_usage-1.3.1-1.2.7.tar.gz
-Source2:	http://www.squirrelmail.org/plugins/unsafe_image_rules.0.8-1.4.tar.gz
-Source3:	http://www.squirrelmail.org/plugins/notes.1.2-1.4.0.tar.gz
-Source4:	http://www.squirrelmail.org/plugins/qmailadmin_login-1.1-1.4.3.tar.gz
-Source5:	config_local.php
-Source6:	squirrelmail.conf
-Patch0:		squirrelmail-toaster-02052009.patch
-Requires:	httpd
-Requires:	php
-Requires:       perl
-Requires:       aspell
-Obsoletes:	squirrelmail-toaster
-BuildRoot:      %{_topdir}/BUILDROOT/%{name}-%{version}-%{release}.%{_arch}
+Name:      squirrelmail
+Summary:   SquirrelMail webmail client
+Version:   1.4.22
+Release:   0%{?dist}
+License:   GPL
+Group:     Applications/Internet
+Vendor:    QmailToaster
+Packager:  Eric Shubert <qmt-build@datamatters.us>
+URL:       http://www.squirrelmail.org/
+Source0:   http://downloads.sourceforge.net/project/squirrelmail/stable/1.4.22/%{name}-webmail-%{version}.tar.gz
+Source1:   http://www.squirrelmail.org/plugins/quota_usage-1.3.1-1.2.7.tar.gz
+Source2:   http://www.squirrelmail.org/plugins/unsafe_image_rules.0.8-1.4.tar.gz
+Source3:   http://www.squirrelmail.org/plugins/notes.1.2-1.4.0.tar.gz
+Source4:   http://www.squirrelmail.org/plugins/qmailadmin_login-1.1-1.4.3.tar.gz
+Source5:   config_local.php
+Source6:   squirrelmail.conf
+Patch0:	   squirrelmail-toaster-02052009.patch
+Requires:  httpd
+Requires:  php
+Requires:  perl
+Requires:  aspell
+Obsoletes: squirrelmail-toaster
+BuildRoot: %{_topdir}/BUILDROOT/%{name}-%{version}-%{release}.%{_arch}
 
 %define debug_package %{nil}
 %define apachedir     /etc/httpd/conf/
