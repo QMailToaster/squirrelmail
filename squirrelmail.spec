@@ -15,10 +15,11 @@ Source4:   http://www.squirrelmail.org/plugins/qmailadmin_login-1.1-1.4.3.tar.gz
 Source5:   config_local.php
 Source6:   squirrelmail.conf
 Patch0:	   squirrelmail-toaster-02052009.patch
-Requires:  httpd
-Requires:  php
-Requires:  perl
 Requires:  aspell
+Requires:  httpd
+Requires:  perl
+Requires:  php
+Requires:  tmpwatch
 Obsoletes: squirrelmail-toaster
 BuildRoot: %{_topdir}/BUILDROOT/%{name}-%{version}-%{release}.%{_arch}
 
